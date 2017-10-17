@@ -18,4 +18,6 @@
 //@Library('github.com/fabric8io/fabric8-pipeline-library@master')
 def dummy = "avoid compile error"
 
-fabric8EETest userSecret: "default-test-user", beforeTest: fabric8EETestFindLocal()
+fabric8EETest userSecret: "default-test-user", beforeTest: fabric8EETestFindLocal() + """
+export DISABLE_CHE="true"
+"""
